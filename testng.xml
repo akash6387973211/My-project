@@ -4,6 +4,11 @@
     <test name="TestSuiteTest">
         <classes>
             <class name="org.StepDefinitions.StepDefination"/>
+            <class name="org.utils.Hooks">
+                <methods>
+                    <include name="driverClose"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

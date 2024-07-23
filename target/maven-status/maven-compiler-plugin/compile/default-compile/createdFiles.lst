@@ -1,0 +1,5 @@
+org\Locators\LoginPageLocators.class
+org\Runners\TesteRunner.class
+org\StepDefinitions\StepDefination.class
+org\StepDefinitions\SetupWebDriver.class
+org\utils\Hooks.class
