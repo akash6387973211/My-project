@@ -2,10 +2,8 @@
 Feature: Check Listing Dse form
   Background:
     Given Set chrome WebDriver
-  Scenario: Launch url
 
-
-    @smoke
+  @smoke
   Scenario Outline: Fill Listing Dse form
     Given Launch dse URL at "<url>"
     When user enter name "<username>" and email "<email>" and contact no "<contactNo>"
@@ -30,3 +28,19 @@ Feature: Check Listing Dse form
     Examples:
       |url                                   |bed|
       | https://www.squareyards.ca/sale/on/toronto |2     |
+
+    Scenario: Verify h1 of all pages
+      Given  fetch community sale data from api
+      Then I process the community sale data and verify h1 of every page
+
+  Scenario: Verify h1 of all pages
+    Given  fetch community lease data from api
+    Then I process the community lease data and verify h1 of every page
+
+  Scenario: Verify h1 of all pages
+    Given  fetch municipality sale data from api
+    Then I process the municipality sale data and verify h1 of every page
+
+  Scenario: Verify h1 of all pages
+    Given  fetch municipality lease data from api
+    Then I process the municipality lease data and verify h1 of every page

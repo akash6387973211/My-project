@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenium Testng Template">
+<suite name="Selenium Testng Template" parallel="classes">
     <test name="TestSuiteTest">
         <classes>
-            <class name="org.StepDefinitions.StepDefination"/>
-            <class name="org.utils.Hooks">
-                <methods>
-                    <include name="driverClose"/>
-                </methods>
-            </class>
+            <class name="org.Runners.TesteRunner"/>
         </classes>
     </test>
 </suite>

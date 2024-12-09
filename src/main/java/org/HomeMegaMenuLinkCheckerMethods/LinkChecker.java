@@ -12,13 +12,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-public class LinkChecker {
+
+public class   LinkChecker {
     protected static int NCount = 0;
   protected static int Salecount = 0;
    protected static int Rentcount = 0;
 
     static int Linkchecker(WebDriver driver, String xpath, String id) {
-//		SoftAssert a = new SoftAssert();
+
         int invalidLink = 0;
         String Bxpath = String.format("//li[contains(@data-id,'%s')]//div[@class='sliderNavigation']/div//a", id);
         List<WebElement> items = driver.findElements(By.xpath(Bxpath));
@@ -32,6 +33,8 @@ public class LinkChecker {
                     if (resps > 400) {
                         System.out.println("link is borken" +" "+ url + resps);
                         invalidLink++;
+                    }else {
+                        System.out.println(resps);
                     }
 
                 } catch (Exception ess) {
@@ -55,7 +58,7 @@ public class LinkChecker {
             huc.connect();
             return huc.getResponseCode();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("unable to get status code");
             return -1;
         }
 
@@ -63,20 +66,18 @@ public class LinkChecker {
 
     public static void areapicker(WebDriver driver, String xpath) {
 //		driver.findElement(By.id("knowledgeCityBtn")).click();
-
         WebElement areaList = driver.findElement(By.xpath(xpath));
         List<WebElement> links = areaList.findElements(By.tagName("a"));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5000));
+
         for (WebElement link : links) {
 
             String clickOnLinkTab = Keys.chord(Keys.CONTROL, Keys.ENTER);
-
             wait.until(ExpectedConditions.elementToBeClickable(link));
             link.sendKeys(clickOnLinkTab);
             driver.findElement(By.id("knowledgeCityBtn")).click();
 
         }
-
         Set<String> windowHandles = driver.getWindowHandles();
         Iterator<String> it = windowHandles.iterator();
 

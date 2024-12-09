@@ -11,7 +11,7 @@ Feature: Check Listing Detail lead-form
     Then click on submit button and verify thank you msg
     Examples:
       |url                                                                                   |username|email         |contactNo|
-      | https://www.squareyards.ca/sale/on/toronto/kennedy-park/5-greystone-walk-dr-unit-1502 |test    |test@gmail.com|1111111111|
+      | https://www.squareyards.ca/sale/on/toronto/west-humber-clairville/125-alicewood-court-m9v-3y1 |test    |test@gmail.com|1111111111|
 
   Scenario Outline: Fill Listing detail gallery lead-form
     Given Launch detail URL at "<url>"

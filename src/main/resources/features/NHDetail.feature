@@ -1,17 +1,15 @@
-
 Feature: Check Detail lead-form
+
   Background:
     Given Set chrome WebDriver
-  Scenario: Launch url
-
 
   Scenario Outline: Fill Detail lead-form
     Given Launch detail URL at "<url>"
     When user enter name "<username>" and email "<email>" and contact no "<contactNo>"
     Then click on submit button and verify thank you msg
     Examples:
-      |url                                                                                   |username|email         |contactNo|
-      | https://www.squareyards.ca/new-homes/on/york/vaughan/beverley-glen/the-thornhill/155 |test    |test@gmail.com|1111111111|
+      | url                                                                                  | username | email          | contactNo  |
+      | https://www.squareyards.ca/new-homes/on/york/vaughan/beverley-glen/the-thornhill/155 | test     | test@gmail.com | 1111111111 |
 
 
   Scenario Outline: Fill gallery lead-form
@@ -20,16 +18,340 @@ Feature: Check Detail lead-form
     When user enter name "<username>" on gallery lead form and email "<email>" and contact no "<contactNo>"
     Then click on submit button and verify thank you msg
     Examples:
-      |url                                                                                   |username|email         |contactNo|
-      | https://www.squareyards.ca/new-homes/on/york/vaughan/beverley-glen/the-thornhill/155 |test    |test@gmail.com|1111111111|
+      | url                                                                                  | username | email          | contactNo  |
+      | https://www.squareyards.ca/new-homes/on/york/vaughan/beverley-glen/the-thornhill/155 | test     | test@gmail.com | 1111111111 |
 
-   Scenario Outline: Check footer links
-    Given Launch detail URL at "<url>"
-     When user clicks on link
-     Then it should not return error
-   Examples:
-     |url                                        |
-     |https://www.squareyards.ca/new-homes/on/york/vaughan/elder-mills/the-towns-of-rutherford-heights/389|
+  Scenario: Check footer links
+    And Check all these URLs and navigate to
+      | https://www.squareyards.ca/new-homes/on/york/vaughan/elder-mills/the-towns-of-rutherford-heights/389 |
+      |https://www.squareyards.ca/new-homes/on/toronto/church-yonge-corridor/maison-wellesley-condos/399     |
+      |https://www.squareyards.ca/new-homes/on/toronto/waterfront-communities/31-condominiums/85             |
+      |https://www.squareyards.ca/new-homes/on/toronto/annex/the-bedford-condos/325                          |
+      |https://www.squareyards.ca/new-homes/on/toronto/regent-park/the-georgian/324                          |
+      |https://www.squareyards.ca/new-homes/on/toronto/north-york-city-centre/4800-yonge-street/210          |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/old-oakville/gemini-condos/369               |
+      |https://www.squareyards.ca//new-homes/on/niagara/st-catharines/oakridge/lot-16-townhomes/368          |
+      |https://www.squareyards.ca//new-homes/on/toronto/oakridge/mile-creek-condos-phase-2/371               |
+      |https://www.squareyards.ca//new-homes/on/durham/pickering/town-centre/pickering-city-centre-condos/370|
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/line-5-condos-south-tower/56     |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/line-5-condos/128                |
+      |https://www.squareyards.ca//new-homes/on/hamilton/corktown/75-james-condominiums/313                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/birchcliffe-cliffside/birchley-park-condos/361       |
+      |https://www.squareyards.ca//new-homes/on/toronto/niagara/bellwoods-house/364                          |
+      |https://www.squareyards.ca//new-homes/on/york/markham/angus-glen/union-village/160                    |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/creditview/voya-2-condos/223                |
+      |https://www.squareyards.ca//new-homes/on/toronto/forest-hill-south/foret-condos/316                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/stonegate-queensway/blvd-q-condos/360                |
+      |https://www.squareyards.ca//new-homes/on/hamilton/ainslie-wood/1107-main-condos/354                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities-c1/reside-on-richmond/357     |
+      |https://www.squareyards.ca//new-homes/on/waterloo/kitchener/q-condos/355                              |
+      |https://www.squareyards.ca//new-homes/on/halton/milton/dempsey/thompson-towers/356                    |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/rural-oakville/ivy-rouge/382                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/the-dawes/173                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/islington-city-centre-west/thirty-six-zorra-condominiums/158|
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/oscar-residences/141                                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/cliffcrest/residences-at-bluffers-park/347                  |
+      |https://www.squareyards.ca//new-homes/on/durham/whitby/downtown-whitby/station-3-condos/365                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/old-town/alias-condos/264                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/regent-park/leftbank-condos/127                             |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/port-credit/bridge-house/191                       |
+      |https://www.squareyards.ca//new-homes/on/hamilton/corktown/corktown-condos/304                               |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/akra-condos/345                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/forest-hill-south/south-forest-hill/238                     |
+      |https://www.squareyards.ca//new-homes/on/york/richmond-hill/westbrook/evelyn-at-rise-rose/380                |
+      |https://www.squareyards.ca//new-homes/on/toronto/dovercourt-wallace-emerson-junction/galleria-2-condos/374   |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities-c1/q-tower/363                       |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/vaughan-corporate-centre/park-place/222                |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/m-city-6-condos/375                    |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/maple/abeja-district-condos/8                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/rosedale-moore-park/park-road-condos/373                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/south-parkdale/8-temple/359                                 |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/hurontario/canopy-towers/100                       |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/mississauga-valleys/keystone-condos/255            |
+      |https://www.squareyards.ca//new-homes/on/toronto/thorncliffe-park/the-frederick/219                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/mimico/327-royal-york-condos/248                            |
+      |https://www.squareyards.ca//new-homes/on/toronto/lakeside-residences-community/lakeside-residences/273       |
+      |https://www.squareyards.ca//new-homes/on/toronto/trinity-bellwoods/the-twelve-hundred/27                     |
+      |https://www.squareyards.ca//new-homes/on/hamilton/beasley/the-rebecca-condos/372                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/88-queen-condos-phase-2/4             |
+      |https://www.squareyards.ca//new-homes/on/toronto/moss-park/bauhaus-condos/13                                 |
+      |https://www.squareyards.ca//new-homes/on/waterloo/kitchener/tek-tower-condos/246                             |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/concord/cg-tower/221                                   |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/m4-condos/21                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/birchcliffe-cliffside/kingside-residences/348               |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/m-city-condos-5/179                    |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/steeles-west-industrial/hillmont-at-sxsw-condos/54     |
+      |https://www.squareyards.ca//new-homes/on/york/newmarket/woodland-hill/glenway-urban-towns/53                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/moss-park/the-whitfield/35                                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/willowdale-east/olive-residences/376                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/downsview-roding-cfb/1184-wilson-avenue-condos/263          |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/untitled-toronto-condos-2/163           |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/untitled-toronto-condos/162             |
+      |https://www.squareyards.ca//new-homes/on/toronto/henry-farm/lsq-condos-tower-2/367                           |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/west-oak-trails/clockwork-condos/257                |
+      |https://www.squareyards.ca//new-homes/on/algoma/quebec/kipling-station-condos/349                            |
+      |https://www.squareyards.ca//new-homes/on/toronto/agincourt-south-malvern-west/ksquare-condos/321             |
+      |https://www.squareyards.ca//new-homes/on/toronto/dovercourt-wallace-emerson-junction/galleria-01-condos/115  |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/50-scollard-condos/39                                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/north-st-james-town/burke-condos/97                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/central-condos/44                    |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/cooksville/20-twenty-towns/83                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/briar-hill-belgravia/1141-roselawn-avenue-condos/275        |
+      |https://www.squareyards.ca//new-homes/on/kawartha-lakes/rural-fenelon/fenelon-lakes-club/50                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/garden-district-condos/51             |
+      |https://www.squareyards.ca//new-homes/on/toronto/kingsway-south/kingsway-crescent-condos/55                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/newtonbrook-east/m2m-condos/57                              |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/357-king-west/5                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/east-end-danforth/danny-danforth-condominiums/17            |
+      |https://www.squareyards.ca//new-homes/on/toronto/east-end-danforth/house-of-assembly/19                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/kensington-chinatown/mrkt-alexandra-park/22                 |
+      |https://www.squareyards.ca//new-homes/on/york/newmarket/central-newmarket/the-davis-residences-at-bakerfield/31|
+      |https://www.squareyards.ca//new-homes/on/toronto/stockyards-district/residences-on-st-clair-west/215           |
+      |https://www.squareyards.ca//new-homes/on/waterloo/downtown-waterloo/louie-waterloo-residences/180              |
+      |https://www.squareyards.ca//new-homes/on/brantford/empire-wyndfield-nf/empire-wyndfield/111                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/scarborough-village/the-narrative/176                         |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/rural-oakville/the-greenwich-condos/174               |
+      |https://www.squareyards.ca//new-homes/on/toronto/junction-area/stockyards-districts-condos/65                  |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/port-credit/the-mason/265                            |
+      |https://www.squareyards.ca//new-homes/on/halton/milton/walker/soleil-condos/241                                |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-east/untitled-toronto-condos/73                |
+      |https://www.squareyards.ca//new-homes/on/toronto/clanton-park/express-condos-2/377                             |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/hurontario/above-condos/307                          |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/lakeview/tridel-harbour-walk/309                     |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/hurontario/gemma-condos/117                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/humewood-cedarvale/raglan-house-condos/378                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-east/leaside-common/20                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/rosedale-moore-park/one-delisle-condos/62                     |
+      |https://www.squareyards.ca//new-homes/on/toronto/lansing-westgate/northcore-condos/314                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/banbury-don-mills/crest-at-crosstown-condos/45                |
+      |https://www.squareyards.ca//new-homes/on/toronto/bayview-village/six99-condos/239                              |
+      |https://www.squareyards.ca//new-homes/on/toronto/parkwoods/lawrence-hill-urban-towns/224                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/high-park-swansea/mirabella-condos/59                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/sugar-wharf-condos/170                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/south-core/pinnacle-sky-tower/144                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/empire-quay-house-condos/110           |
+      |https://www.squareyards.ca//new-homes/on/toronto/garden-district/elektra-condominiums/201                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/moss-park/allure-condos/343                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/centricity-condos/282                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/forma-condos/175                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/cielo-condos/16                                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/8-elm/302                                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities-c8/sugar-wharf-condos-2/225            |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/concord-sky/197                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/celeste-condos/172                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/55c-condos/272                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/rosedale-moore-park/adagio-condos/9                           |
+      |https://www.squareyards.ca//new-homes/on/durham/pickering/bay-ridges/the-grand-at-universal-city/322           |
+      |https://www.squareyards.ca//new-homes/on/toronto/banbury-don-mills/crest-at-crosstown/105                      |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/vaughan-corporate-centre/bravo-condos/194                |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/the-pemberton-33-yorkville/72                           |
+      |https://www.squareyards.ca//new-homes/on/peel/brampton/brampton-south/duo-condos/240                           |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/cooksville/artform-condos/94                         |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/cooksville/arte-residences/93                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/canary-house-condos/99                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/north-st-james-town/burke-condos/97                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/empire-quay-house-condos/110           |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/empire-quay-house-condos/110           |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/vaughan-corporate-centre/vincent-condos/165              |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/canary-house-condos/99                 |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/cooksville/artform-condos/94                         |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/cooksville/arte-residences/93                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/old-town/alias-condos/264                                     |
+      |https://www.squareyards.ca//new-homes/on/york/richmond-hill/south-richvale/8888-yonge-condos/90                |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/31-condominiums/85                     |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/8-cumberland/1                                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/11-yorkville/2                                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/little-portugal/1181-queen-west-condos/6                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/anx-condos/10                                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/canary-commons/14                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/natasha-the-residences/24              |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/oscar-residences/25                                     |
+      |https://www.squareyards.ca//new-homes/on/toronto/moss-park/prime-condos/26                                     |
+      |https://www.squareyards.ca//new-homes/on/toronto/regent-park/river-fifth-condos/27                             |
+      |https://www.squareyards.ca//new-homes/on/york/markham/aileen-willowbrook/royal-bayview/28                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/weston-pellam-park/scout-condos/29                            |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/steeles-west-industrial/sxsw-tower-2-condos/30           |
+      |https://www.squareyards.ca//new-homes/on/toronto/dovercourt-wallace-emerson-junction/the-dupont/32             |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/the-gloucester-on-yonge/33              |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/the-pj-condos/34                       |
+      |https://www.squareyards.ca//new-homes/on/york/markham/angus-glen/union-village/36                              |
+      |https://www.squareyards.ca//new-homes/on/toronto/south-parkdale/xo2-condos/37                                  |
+      |https://www.squareyards.ca//new-homes/on/york/richmond-hill/harding/y9825/38                                   |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/uplands/8188-yonge-condos/89                             |
+      |https://www.squareyards.ca//new-homes/on/simcoe/oro-medonte/shanty-bay/eagle-s-rest-estates/46                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/west-hill/east-pointe-condos/47                               |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/exchange-district-condos-3/48            |
+      |https://www.squareyards.ca//new-homes/on/toronto/clanton-park/express-condos/49                                |
+      |https://www.squareyards.ca//new-homes/on/toronto/bedford-park-nortown/glen-hill-condos/52                      |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/m-city-condos-4/58                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/humber-heights/notting-hill-condos-2/60                       |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/rural-oakville/oak-co-condos/61                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/west-hill/perch-condos/63                                     |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/square-one-district-condos/64            |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/the-davisville-condos/66                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/yorkdale-glen-park/the-dylan-condos/67                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/downsview-roding-cfb/the-keeley-condos/68                     |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/rural-vaughan/the-mackenzie-condos/69                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/birchcliffe-cliffside/the-manderley-condos/70                 |
+      |https://www.squareyards.ca//new-homes/on/halton/milton/old-milton/the-millhouse-condos/71                      |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/voya-condos/75                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/islington-city-centre-west/westerly-condos-2/77               |
+      |https://www.squareyards.ca//new-homes/on/toronto/york-university-heights/westline-condos/78                    |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/rural-oakville/wilmot-condos/79                       |
+      |https://www.squareyards.ca//new-homes/on/hamilton/beasley/1-jarvis/81                                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/8-wellesley/82                            |
+      |https://www.squareyards.ca//new-homes/on/hamilton/corktown/28-eastern/84                                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/the-distillery-district/33-parliament/86                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/199-church-condos/87                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/rosedale-moore-park/771-yonge-st-condos/88                    |
+      |https://www.squareyards.ca//new-homes/on/york/richmond-hill/south-richvale/8888-yonge-condos/90                |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/maple/abeja-district-condos-tower-3/91                   |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/mississauga-valleys/alba-condos/92                   |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/steeles-west-industrial/atmosphere-penthouse-collection-at-sxsw/95|
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/port-credit/brightwater-i-ii-condos/96                        |
+      |https://www.squareyards.ca//new-homes/on/durham/oshawa/windfields/charing-cross-condominiums/101                        |
+      |https://www.squareyards.ca//new-homes/on/peel/brampton/bram-east/claireville-urban-towns/102                            |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities/concord-canada-house/103                        |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/condominiums-at-square-one-district/104           |
+      |https://www.squareyards.ca//new-homes/on/frontenac/kingston/crown-condominiums/106                                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/east-end-danforth/danny-danforth-condominiums/107                      |
+      |https://www.squareyards.ca//new-homes/on/simcoe/oro-medonte/rural-oro-medonte/eagles-rest-estates/108                   |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/exchange-district-condos-phase-3/112              |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/vaughan-corporate-centre/festival-condos/113                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/casa-loma/forest-hill-private-residences/114                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/dovercourt-wallace-emerson-junction/galleria-3-condos/116              |
+      |https://www.squareyards.ca//new-homes/on/durham/whitby/downtown-whitby/highbury-gardens/118                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/dufferin-grove/house-of-assembly/119                                   |
+      |https://www.squareyards.ca//new-homes/on/durham/ajax/south-west/hunters-crossing/120                                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/jac-condos/121                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/junction-area/junction-square-condos/122                               |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-east/keewatin/123                                       |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/rathwood/keystone-condos-phase-2/124                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/kingsway-south/kingsway-crescent/125                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/new-toronto/lake-town/126                                              |
+      |https://www.squareyards.ca//new-homes/on/toronto/newtonbrook-east/m2m-spaces/129                                        |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/vaughan-corporate-centre/m2-towns/130                             |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/m3-condos/131                                     |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/kleinburg/mcmichael-estates/132                                   |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/vaughan-corporate-centre/mobilio-towns/133                        |
+      |https://www.squareyards.ca//new-homes/on/durham/clarington/bowmanville/modo-condos/134                                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/kensington-chinatown/mrkt-alexandra-park/135                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/playter-estates-danforth/nahid-broadview/136                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/kennedy-park/nahid-kennedy/137                                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/humber-heights/notting-hill-condos/138                                 |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/rural-oakville/oak-co-condos/139                               |
+      |https://www.squareyards.ca//new-homes/on/toronto/banbury-don-mills/one-crosstown-condos/140                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/downsview-roding-cfb/parkside-towns-at-saturday/142                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/west-hill/perch-condos/143                                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/tam-o-shanter-sullivan/pinnacle-toronto-east/145                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/greenwood-coxwell/queen-ashbridge-condos/146                           |
+      |https://www.squareyards.ca//new-homes/on/peel/brampton/fletchers-creek-south/stella-at-southside-condos/147             |
+      |https://www.squareyards.ca//new-homes/on/york/newmarket/central-newmarket/the-davis-residences/148                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/yorkdale-glen-park/the-dylan-condominiums/149                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/south-riverdale/the-grove-condos/150                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/englemount-lawrence/the-new-lawrence-heights/151                       |
+      |https://www.squareyards.ca//new-homes/on/simcoe/barrie/city-centre/the-residences-on-owen/152                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/islington-city-centre-west/the-tailor-queensway-residences/153         |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/beverley-glen/the-thornhill/154                                   |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/beverley-glen/the-thornhill/155                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/the-united-bldg-condos/156                         |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/erin-mills/the-way-urban-towns/157                            |
+      |https://www.squareyards.ca//new-homes/on/durham/oshawa/windfields/uc-uptowns/159                                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/untitled-toronto/161                               |
+      |https://www.squareyards.ca//new-homes/on/peel/brampton/heart-lake/uptowns-at-heart-lake/164                             |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/vaughan-corporate-centre/vincent-condos/165                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/islington-city-centre-west/westerly-condos/166                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/york-university-heights/westline-condos/167                            |
+      |https://www.squareyards.ca//new-homes/on/toronto/glenfield-jane-heights/yorkwoods-condos/168                            |
+      |https://www.squareyards.ca//new-homes/on/toronto/lawrence-park-south/hillhurst-towns/169                                |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/glen-abbey/the-saw-whet-condos/171                             |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/lakeview/lakeview-dxe-club/177                                |
+      |https://www.squareyards.ca//new-homes/on/toronto/church-yonge-corridor/queen-church-condos/178                          |
+      |https://www.squareyards.ca//new-homes/on/simcoe/springwater/hillsdale/hometown-hillsdale/181                            |
+      |https://www.squareyards.ca//new-homes/on/prince-edward/prince-edward-county/wellington/cork-vine/182                    |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/old-oakville/550-kerr-street/183                               |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/1-eglinton-avenue-east/184                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/clairlea-birchmount/1-eglinton-square/185                              |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/1-scollard/186                                                   |
+      |https://www.squareyards.ca//new-homes/on/hamilton/corktown/1-sumach-street-condos/187                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/north-st-james-town/10-huntley/188                                     |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/10-prince-arthur/189                                             |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/old-oakville/the-deane/190                                     |
+      |https://www.squareyards.ca//new-homes/on/durham/oshawa/windfields/uc-tower-3/192                                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/etobicoke-west-mall/curio-condos/193                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/10-st-mary-street-condos/195                       |
+      |https://www.squareyards.ca//new-homes/on/durham/oshawa/o-neill/100-bond-street-condos/196                               |
+      |https://www.squareyards.ca//new-homes/on/toronto/stonegate-queensway/cypress-at-pinnacle-etobicoke/198                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/annex/100-davenport/199                                                |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/old-oakville/109-reynolds-street/200                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/broadview-north/1001-broadview-residences/202                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/deer-park/101-heath-west/203                                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/etobicoke-west-mall/verge-2-east-tower/204                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/entertainment-district/101-spadina-avenue/205                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/etobicoke/1045-the-queensway/206                                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/1075-bay-street-condos/207                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/mount-pleasant-west/109-erskine-avenue/208                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/high-park-swansea/southport-in-swansea/209                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/fashion-district/123-portland/211                                      |
+      |https://www.squareyards.ca//new-homes/on/durham/pickering/village-east/the-highmark/212                                 |
+      |https://www.squareyards.ca//new-homes/on/york/richmond-hill/south-richvale/8905-bathurst-street-condos/213              |
+      |https://www.squareyards.ca//new-homes/on/york/richmond-hill/10217-yonge-street/214                                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/summerhill/49-jackes-avenue-condos/216                                 |
+      |https://www.squareyards.ca//new-homes/on/peel/brampton/credit-valley/queens-lane/217                                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities-c8/the-goode-condos/226                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/dovercourt-wallace-emerson-junction/galleria-3-condos/227              |
+      |https://www.squareyards.ca//new-homes/on/hamilton/central/radio-arts/228                                                |
+      |https://www.squareyards.ca//new-homes/on/prince-edward/prince-edward-county/wellington/cork-vine/229                    |
+      |https://www.squareyards.ca//new-homes/on/waterloo/kitchener/verde-living/237                                            |
+      |https://www.squareyards.ca//new-homes/on/halton/burlington/brant/nautique-lakefront-condos/242                          |
+      |https://www.squareyards.ca//new-homes/on/halton/burlington/brant/martha-james-condominiums/243                          |
+      |https://www.squareyards.ca//new-homes/on/york/markham/cornell/jade-garden/244                                           |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/mineola/vellore-crescent/245                                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/mimico/grand-central-mimico/247                                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/lansing-westgate/the-well-condos/249                                   |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/exchange-district-condos-phase-2/250              |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/exchange-district-signature/252                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/bay-street-corridor/the-one/253                                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/sherwood-park/akra-living/254                                          |
+      |https://www.squareyards.ca//new-homes/on/toronto/bayview-village/bayview-village-condos/256                             |
+      |https://www.squareyards.ca//new-homes/on/toronto/newtonbrook-east/m2m-squared-condos/258                                |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/glenorchy/upper-west-side-condos/259                           |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/fairview/avia-2/261                                           |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/port-credit/tanu-condos/262                                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/birchcliffe-cliffside/the-manderley-condos/266                         |
+      |https://www.squareyards.ca//new-homes/on/toronto/dovercourt-wallace-emerson-junction/motto-condos/268                   |
+      |https://www.squareyards.ca//new-homes/on/toronto/humberlea-pelmo-park-w4/empire-maverick-condos/269                     |
+      |https://www.squareyards.ca//new-homes/on/toronto/junction-area/260-high-park/271                                        |
+      |https://www.squareyards.ca//new-homes/on/toronto/woburn/1125-markham-road-condos/274                                    |
+      |https://www.squareyards.ca//new-homes/on/toronto/niagara/111-strachan-avenue-condos/276                                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/bayview-village/11-greenbriar/277                                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/york-university-heights/11-catford/278                                 |
+      |https://www.squareyards.ca//new-homes/on/toronto/sherwood-park/133-erskine-avenue-condos/279                            |
+      |https://www.squareyards.ca//new-homes/on/toronto/high-park-swansea/westbend-residences/283                              |
+      |https://www.squareyards.ca//new-homes/on/toronto/lawrence-park-north/1-tudor-gate/284                                   |
+      |https://www.squareyards.ca//new-homes/on/york/markham/unionville/100-110-clegg/285                                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/islington-city-centre-west/1048-islington-avenue-condos/286            |
+      |https://www.squareyards.ca//new-homes/on/toronto/islington-city-centre-west/1061-the-queensway/287                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/wychwood/monza-condos/290                                              |
+      |https://www.squareyards.ca//new-homes/on/durham/whitby/lynde-creek/the-w-condos/300                                     |
+      |https://www.squareyards.ca//new-homes/on/durham/pickering/town-centre/vupoint-condos/303                                |
+      |https://www.squareyards.ca//new-homes/on/simcoe/barrie/horseshoe-valley/horseshoe-residences/305                        |
+      |https://www.squareyards.ca//new-homes/on/hamilton/beasley/design-district-condos-2/306                                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/waterfront-communities-c8/the-prestige-condos/308                      |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/rathwood/hazelton-highlight/310                               |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/uptown/north-oak-condos/311                                    |
+      |https://www.squareyards.ca//new-homes/on/halton/oakville/west-oak-trails/nuvo-condos/312                                |
+      |https://www.squareyards.ca//new-homes/on/toronto/junction-area/316-junction-condos/315                                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/parkwoods-donalda/spirits-condominiums/317                             |
+      |https://www.squareyards.ca//new-homes/on/durham/oshawa/farewell/nahid-harbour/318                                       |
+      |https://www.squareyards.ca//new-homes/on/toronto/rosedale-moore-park/no-7-rosedale/319                                  |
+      |https://www.squareyards.ca//new-homes/on/toronto/birchcliffe-cliffside/birchcliff-urban-towns/320                       |
+      |https://www.squareyards.ca//new-homes/on/york/markham/unionville/unioncity-condo/323                                    |
+      |https://www.squareyards.ca//new-homes/on/wellington/guelph/two-rivers/anthem-at-the-metalworks/326                      |
+      |https://www.squareyards.ca//new-homes/on/peel/mississauga/city-centre/exchange-district-4/327                           |
+      |https://www.squareyards.ca//new-homes/on/toronto/willowdale-east/pearl-place-condos/328                                 |
+      |https://www.squareyards.ca//new-homes/on/york/vaughan/uplands/8188-yonge-condos/89                                      |
+      |https://www.squareyards.ca//new-homes/on/toronto/islington-city-centre-west/arcadia-district/362                        |
 
 
 
